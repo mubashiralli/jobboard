@@ -147,7 +147,16 @@
               <a href="#" class="pt-3 pb-3 pr-3 pl-0"><span class="icon-linkedin"></span></a>
             </div>
           </div>
-
+          <div class="bg-light p-3 border rounded mb-4">
+            <h3 class="text-primary  mt-3 h5 pl-3 mb-3 ">Jobs Categories</h3>
+            <ul class="list-unstyled pl-3 mb-0">
+              @foreach($categories as $category)
+              <li class="mb-2">
+              <a class="pt-3 pb-3 pr-3 pl-0"href='{{route('categories.job', $category->name)}}'>{{$category->name}}</a> 
+            </li>
+              @endforeach
+            </ul>
+          </div>
         </div>
       </div>
     </div>

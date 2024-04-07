@@ -7,11 +7,16 @@ use Illuminate\Http\Request;
 use App\Models\Job\Job;
 use App\Models\Job\SavedJob;
 use App\Models\Job\Application;
+use App\Models\Category\Category;
 use Auth;
 
 class JobsController extends Controller
 {
     //
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function jobView($id)
     {
         $job = Job::find($id);
@@ -33,7 +38,10 @@ class JobsController extends Controller
         } else {
             $isapplied = false;
         }
-        return view('jobs.job', compact('job', 'relevantJobs', 'totalJobs', 'status', 'isapplied'));
+        //finding categories
+        $categories = Category::take(5)->get();
+
+        return view('jobs.job', compact('job', 'relevantJobs', 'totalJobs', 'status', 'isapplied','categories'));
     }
 
     public function saveJob(Request $request)

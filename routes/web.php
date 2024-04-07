@@ -22,9 +22,8 @@ use Illuminate\Http\Response;
 // });
 
 Auth::routes();
-// Route::get('/api/db', [App\Http\Controllers\ScrapingAPI\ScrapingAPI::class, 'retrive_data']);
-// Route::post('/api/db',[App\Http\Controllers\ScrapingAPI\ScrapingAPI::class,'add_data']);
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/job/single/{id}', [App\Http\Controllers\Jobs\JobsController::class, 'jobView'])->name('single.job');
 Route::post('/savejob', [App\Http\Controllers\Jobs\JobsController::class, 'saveJob'])->name('save.job');
 Route::post('/applyjob', [App\Http\Controllers\Jobs\JobsController::class, 'applyJob'])->name('apply.job');
+Route::get('/category/{name}', [App\Http\Controllers\Category\Categories::class, 'categoriesListing'])->name('categories.job');

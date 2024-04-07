@@ -33,8 +33,7 @@
                   The Easiest Way To Get Your Dream Job
                 </h1>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Cupiditate est, consequuntur perferendis.
+                  Search . Apply . Get Hired 
                 </p>
               </div>
               <form method="post" class="search-jobs-form">
@@ -174,10 +173,10 @@
             <li
                 class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center"
               >
-                <a href="{{route('single.job',$job->id)}}"></a>
+                <a href="{{route('single.job', $job->id)}}"></a>
                 <div class="job-listing-logo">
                   <img
-                    src="{{asset('assets/images/'.$job->image)}}"
+                    src="{{asset('assets/images/' . $job->image)}}"
                     alt="Free Website Template by Free-Template.co"
                     class="img-fluid"
                   />
